@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: poppins;
+}
+
+body {
+    background-color: bisque;
+}
+
+/* Fix 1 – allow height to scale naturally */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fix 2 – responsive card */
+.box {
+    background-color: #301b00;
+
+    width: 90%;
+    max-width: 550px;
+    min-height: 400px;
+
+    padding-bottom: 2rem;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
+}
+
+/* Title bar */
+.Add_new_text {
+    height: 3rem; /* was VW */
+    background-color: rgb(31, 17, 0);
+    color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Add Task Button */
+.add_task {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.add_task_text {
+    width: 80%;
+    height: 3rem;
+    background-color: rgba(31, 17, 0, 0.5);
+    border-radius: 20rem;
+    text-align: center;
+    color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+}
+
+.add_task_text:hover {
+    background-color: rgb(31, 17, 0);
+}
+
+/* Task Input */
+.task-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task {
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    height: 2.5rem;
+    width: 85%;
+    text-align: center;
+    border-radius: 20rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.task.display {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Task + checkbox container */
+.tasks {
+    margin-top: 1rem;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checkbox */
+.checkbox {
+    margin-left: 0.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    accent-color: rgb(31, 17, 0);
+    border-radius: 0.5rem;
+    transition: 0.2s;
+}
+/* .task-cont:has(.checkbox:checked) .task {
+  text-decoration: line-through;
+  color: #888; 
+} 
+*/
