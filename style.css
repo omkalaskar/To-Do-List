@@ -1,116 +1,131 @@
-* {
-    padding: 0;
-    margin: 0;
+*{
+    padding: 0px;
+    margin: 0px;
     font-family: poppins;
 }
 
-body {
-    background-color: bisque;
-}
-
-/* Fix 1 – allow height to scale naturally */
-.container {
-    min-height: 100vh;
+.main_container{
+    height: 100vh;
+    background: #FFC4C4;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-/* Fix 2 – responsive card */
-.box {
-    background-color: #301b00;
-
-    width: 90%;
-    max-width: 550px;
-    min-height: 400px;
-
-    padding-bottom: 2rem;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
     
 }
 
-/* Title bar */
-.Add_new_text {
-    height: 3rem; /* was VW */
-    background-color: rgb(31, 17, 0);
-    color: bisque;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
+.add_task_container,.list_task_container{
+    background: #FCF5EE;
+    height: 90vh;
+    width: 40%;
+    border-radius: 10px;
+    transition: 0.2s ease;
 }
-
-/* Add Task Button */
-.add_task {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
+.list_task_container{
+    overflow-y: auto;   /* scroll vertically */
+    overflow-x: hidden; /* avoid sideways scroll */
 }
+.list_task_container h2{
 
-.add_task_text {
-    width: 80%;
-    height: 3rem;
-    background-color: rgba(31, 17, 0, 0.5);
-    border-radius: 20rem;
+ 
+  
+    color: #FCF5EE;
+    height: 2.5rem;
+    padding-top: 10px;
     text-align: center;
-    color: bisque;
+    background: #850E35;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.tasks{
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.5s ease;
+    flex-direction: column;
+    
+}
+.task{
+    
+    background: rgba(128, 128, 128, 0.46);
+    border-radius: 10px;
+    height: 2.5rem;
+    margin-top: 15px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.add_task_text:hover {
-    background-color: rgb(31, 17, 0);
+.task .checkbox{
+    margin-left: 20px;
+    margin-top: 2px;
+    transform: scale(1.6);
 }
-
-/* Task Input */
-.task-cont {
+.add_task_container{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.task {
-    font-weight: bold;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-    height: 2.5rem;
-    width: 85%;
-    text-align: center;
-    border-radius: 20rem;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-}
-
-.task.display {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Task + checkbox container */
-.tasks {
-    margin-top: 1rem;
-    width: 85%;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    
 }
+.add_task_container h2{
+    font-size: 1.5rem;
+    color: #540863;
+    margin: 1rem;
+}
+.add_task_container input{
+    border-radius: 10px;
+    border: solid rgb(73, 73, 73) 0.1px;
+    outline: none;
+    height: 4rem;
+    width: 70%;
+    margin-bottom: 1rem;
+    padding: 5px;
+    font-size: 15px;
+}
+.add_task_container button{
+    border-radius: 10px;
+    border: solid rgb(73, 73, 73) 0.1px;
+    outline: none;
+    height: 3.5rem;
+    width: 73%;
+    color: #540863;
+    font-size: 15px;
+    background: #FFC4C4;
+    font-weight: bold;
 
-/* Checkbox */
-.checkbox {
-    margin-left: 0.5rem;
-    height: 1.5rem;
-    width: 1.5rem;
-    accent-color: rgb(31, 17, 0);
-    border-radius: 0.5rem;
-    transition: 0.2s;
 }
-/* .task-cont:has(.checkbox:checked) .task {
-  text-decoration: line-through;
-  color: #888; 
-} 
-*/
+li{
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+.cut{
+    text-decoration:line-through;
+    color: rgba(0, 0, 0, 0.308);
+   transition: 0.5s;
+}
+.newinpstyle{
+    background: transparent;
+    border:none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    outline: none;
+}
+@media screen and (max-width: 768px) {
+    .main_container{
+    height: 100vh;
+    background: #FFC4C4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    }
+    
+    .add_task_container,.list_task_container{
+    background: #FCF5EE;
+    width:  60%;
+    height:  45vh;
+    border-radius: 10px;
+}
+}
